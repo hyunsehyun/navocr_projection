@@ -318,7 +318,7 @@ void NavOCRSLAMNode::publishMarkers()
 void NavOCRSLAMNode::saveDetectionImage(const cv::Mat & image, const cv::Rect & bbox, int frame_id, int detection_id)
 {
   std::stringstream ss;
-  ss << images_dir_ << "/detection_frame_" << std::setw(6) << std::setfill('0') << frame_id ".jpg";
+  ss << images_dir_ << "/detected_frame_" << std::setw(6) << std::setfill('0') << frame_id ".jpg";
   cv::imwrite(ss.str(), image);
   RCLCPP_DEBUG(this->get_logger(), "Saved detection image: %s", ss.str().c_str());
 }
